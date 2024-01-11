@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: True  #[py<38 or s390x]
+  skip: True  #[py<39 or s390x]
   # skipping s390x as it is not available for numba or pyarrow
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
@@ -19,9 +19,10 @@ requirements:
   host:
     - pip
     - python
-    - param 1.13.0
+    - param >=1.7.0
     - wheel
-    - setuptools
+    - pyct >=0.4.4
+    - setuptools >=30.3.0
   run:
     - dask-core
     - fsspec
