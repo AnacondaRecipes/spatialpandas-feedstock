@@ -19,10 +19,10 @@ requirements:
   host:
     - pip
     - python
-    - param >=1.7.0
+    - param
     - wheel
-    - pyct >=0.4.4
-    - setuptools >=30.3.0
+    - pyct
+    - setuptools
   run:
     - dask-core
     - fsspec
