@@ -26,6 +26,7 @@ requirements:
     - dask-core >=2025.1
     - fsspec >=2022.8
     - numba
+    - packaging
     - pandas >=2.0
     - pyarrow >=14.0.1
     - retrying
