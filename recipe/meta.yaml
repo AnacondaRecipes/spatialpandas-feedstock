@@ -63,3 +63,5 @@ extra:
     - hoxbro
     - maximlt
     - philippjfr
+  skip-lints:
+    - reachable_url
