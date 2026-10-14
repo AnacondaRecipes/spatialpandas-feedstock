@@ -2,7 +2,7 @@
 {% set version = "0.6.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
@@ -11,8 +11,8 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<312 or s390x]
   # skipping s390x as it is not available for numba or pyarrow
+  skip: true  # [py<312 or s390x]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
@@ -32,12 +32,17 @@ requirements:
     - retrying
 
 test:
+  source_files:
+    - spatialpandas/tests
   imports:
     - spatialpandas
   commands:
     - pip check
+    - pytest -vv spatialpandas/tests
   requires:
     - pip
+    - pytest
+    - hypothesis
 
 about:
   home: https://github.com/holoviz/spatialpandas
